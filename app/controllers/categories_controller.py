@@ -41,7 +41,7 @@ def create_category():
     return jsonify(categorie), 201
 
   except IntegrityError as err:
-    return jsonify(err.args[0]), 409
+    return jsonify({"msg": "category already exists!"}), 409
 
   except KeyError as err:
     return jsonify(err.args[0]), 400
